@@ -15,7 +15,7 @@ async def home():
         <title>FastAPI HTML 서버</title>
         <style>
             body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-            h1 { color: blue; }
+            h1 { color: blue;` }
         </style>
     </head>
     <body>
@@ -27,4 +27,8 @@ async def home():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=80)  # 80번 포트에서 실행
+    uvicorn.run(app, host="0.0.0.0", port=443,
+                ssl_certfile=r"C:\Users\snagh\cert.pem",  # 경로 앞에 r 추가 (Raw String)
+                ssl_keyfile=r"C:\Users\snagh\key.pem"
+                
+                )    # 경로 앞에 r 추가 (Raw String)
